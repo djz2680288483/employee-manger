@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>20200213-2</display-name>
+  <filter>
+  	<filter-name>encode</filter-name>
+  	<filter-class>com.oracle.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encode</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter>
+  	<filter-name>login</filter-name>
+  	<filter-class>com.oracle.filter.LoginFilter</filter-class>
+  </filter>
+ <filter-mapping>
+ 	<filter-name>encode</filter-name>
+ 	<url-pattern>/*</url-pattern>
+ </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>/selectEmp</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>/operatorEmp</url-pattern>
+  </filter-mapping>
+  
+  
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>/add.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>/update.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>login</filter-name>
+  	<url-pattern>/welcome.jsp</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>com.oracle.servlet.CheckServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectEmpServlet</servlet-name>
+    <servlet-class>com.oracle.servlet.SelectEmpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OperatorEmpServlet</servlet-name>
+    <servlet-class>com.oracle.servlet.OperatorEmpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.oracle.servlet.LogoutServlet</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/check</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectEmpServlet</servlet-name>
+    <url-pattern>/selectEmp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OperatorEmpServlet</servlet-name>
+    <url-pattern>/operatorEmp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

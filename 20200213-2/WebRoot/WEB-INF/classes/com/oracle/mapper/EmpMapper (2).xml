@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.oracle.mapper.EmpMapper">
+ 	<select id="selectEmpByPage" parameterType="com.oracle.po.EmpPage" resultType="com.oracle.po.Emp">
+ 		select * from Emp limit #{pageNum},#{count}
+ 	</select>
+ 	<select id="selectEmpCount" resultType="java.lang.Integer">
+ 		select count(*) from Emp
+ 	</select>
+ 	<select id="selectEmpByEmpno" parameterType="com.oracle.po.Emp" resultType="com.oracle.po.Emp">
+ 		select * from Emp where empno=#{empno}	
+ 	</select>
+ 	<insert id="insertEmp" parameterType="com.oracle.po.Emp">
+ 		insert into Emp(ename,job,sal,comm) values(#{ename},#{job},#{sal},#{comm})
+ 	</insert>
+ 	<update id="updateEmp" parameterType="com.oracle.po.Emp">
+ 		update Emp set ename=#{ename},job=#{job},sal=#{sal},comm=#{comm} where empno=#{empno}
+ 	</update>
+ 	<delete id="deleteEmp" parameterType="com.oracle.po.Emp">
+ 		delete from Emp where empno=#{empno}
+ 	</delete>
+ </mapper>
