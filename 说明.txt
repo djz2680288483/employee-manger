@@ -1,0 +1,6 @@
+教学使用：java+web+mybatis等初学人员
+
+编译环境：myeclipse+tomcat+Navicat+mysql
+
+运营知识点：mybatis+jdbc+web+jsp+servlet+filer+mysql查询语句
+
